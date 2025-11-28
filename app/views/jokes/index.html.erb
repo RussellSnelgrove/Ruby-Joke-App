@@ -1,0 +1,11 @@
+<h1>Jokes</h1>
+
+<turbo-frame id="jokes">
+    <%= button_to "Generate New Joke", new_joke_path, method: :get, class: "btn btn-primary" %>
+
+    <% @jokes.each do |joke| %>
+        <% cache joke do %>
+            <p> <%= joke.joke %> </p>
+        <% end %>
+    <% end %>
+</turbo-frame>
